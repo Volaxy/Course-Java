@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;application.application&apos; to &apos;Program&apos;&#x0D;&#x0A;- Original project: &apos;171 - Foreach Funcional #01 - 01&apos;&#x0D;&#x0A;- Original element: &apos;application.application&apos;&#x0D;&#x0A;- Renamed element: &apos;application.Program&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;application&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;application{application.java[application" matchStrategy="1" name="Program" qualified="false" references="true" similarDeclarations="false" stamp="1599081691595" textual="false" version="1.0"/>
+</session>

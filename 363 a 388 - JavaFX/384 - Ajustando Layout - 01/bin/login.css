@@ -1,0 +1,17 @@
+.login {
+	-fx-background-color: linear-gradient(to right, rgb(5, 117, 230), rgb(2, 27, 121)) repeat scroll 0% 0%;
+}
+
+.login-title {
+	-fx-font-size: 24px;
+	-fx-text-fill: #fff;
+}
+
+.login-form-label {
+	-fx-font-size: 16px;
+	-fx-text-fill: #fff;
+}
+
+.login-form-button {
+	
+}

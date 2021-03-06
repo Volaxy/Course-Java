@@ -1,0 +1,55 @@
+package br.com.gustavomp.controller;
+
+import java.util.Scanner;
+
+import br.com.gustavomp.model.entities.Board;
+import br.com.gustavomp.model.exceptions.ExitException;
+
+public class Match {
+	
+	public static void start(Board board) {
+		Scanner sc = new Scanner(System.in);
+		
+		try {	
+			while(!board.targetComplete()) {
+				showBoard(board);
+				
+				System.out.print("Enter the line and column (x,y):  ");
+				String[] coordinates = sc.nextLine().split(",");
+				
+				int line = Integer.parseInt(coordinates[0]);
+				int column = Integer.parseInt(coordinates[1]);
+				
+				System.out.print("If you want to exit write 1 or other key if cotinues: ");
+				int option = sc.nextInt();
+				
+				if(option == 1) {
+					throw new ExitException("Thank's to play");
+				}
+				
+				System.out.print("1 -> Open | Other key -> Mark: ");
+				option = sc.nextInt();
+				sc.nextLine();
+				
+				if(option == 1) {
+					board.getFields().get(line * board.getColumns() + column).open();
+				} else {
+					board.getFields().get(line * board.getColumns() + column).mark();
+				}
+			}
+		} catch (ExitException e) {
+			throw new ExitException(e.getMessage());
+		} finally {
+			sc.close();			
+		}
+		
+	}
+	
+	
+	
+	
+	private static void showBoard(Board board) {
+		System.out.println(board.toString());
+	}
+	
+}

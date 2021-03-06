@@ -1,0 +1,55 @@
+package br.com.gustavomp.controller;
+
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Scanner;
+
+import br.com.gustavomp.model.entities.Board;
+import br.com.gustavomp.model.exceptions.ExitException;
+
+public class Match {
+	
+	public static void start(Board board) {
+		Scanner sc = new Scanner(System.in);
+		
+		try {
+			while(!board.targetComplete()) {
+				showBoard(board);
+				
+				System.out.print("Enter the line and column (x,y):  ");
+				String ansywer = sc.nextLine();
+				
+				Iterator<Integer> xy = Arrays.stream(ansywer.split(",")).map(e -> Integer.parseInt(e.trim())).iterator();
+				
+				System.out.print("Press 1 for open/mark or 2 for exit: ");
+				int option = sc.nextInt();
+				
+				if(option == 2) {
+					throw new ExitException("Thank's for play");
+				} else {
+					System.out.print("1 - Open | other key - Mark: ");
+					option = sc.nextInt();
+					
+					if(option == 1) {
+						
+					}
+				}
+			}
+
+			System.out.print("Congratilations! You Win!");
+		} catch (ExitException e) {
+			throw new ExitException(e.getMessage());
+		} finally {
+			sc.close();			
+		}
+		
+	}
+	
+	
+	
+	
+	private static void showBoard(Board board) {
+		System.out.println(board.toString());
+	}
+	
+}

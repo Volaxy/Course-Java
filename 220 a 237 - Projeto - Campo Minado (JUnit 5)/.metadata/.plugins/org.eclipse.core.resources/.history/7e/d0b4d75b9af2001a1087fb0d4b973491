@@ -1,0 +1,9 @@
+package br.com.gustavomp.ms.controller;
+
+import br.com.gustavomp.ms.model.entities.Board;
+
+public class BoardController {
+	public static void openField(int line, int column, Board board) {
+		board.open(line, column);
+	}
+}

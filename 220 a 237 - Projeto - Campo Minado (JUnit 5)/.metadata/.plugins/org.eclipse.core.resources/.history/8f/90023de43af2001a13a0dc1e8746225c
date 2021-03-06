@@ -1,0 +1,184 @@
+package br.com.gustavomp.ms.model.entities;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import br.com.gustavomp.ms.model.exception.ExplosionException;
+
+class FieldTest {
+
+	Field field;
+	
+	@BeforeEach
+	void test() {
+		field = new Field(3, 3);
+	}
+	
+	//addNeighbor
+	
+		//Sides
+	
+			@Test
+			void addSameNeighbor() {
+				boolean result = field.addNeighbor(new Field(3, 3));
+				
+				assertFalse(result);
+			}
+			
+			@Test
+			void addTopNeighbor() {
+				boolean result = field.addNeighbor(new Field(2, 3));
+				
+				assertTrue(result);
+			}
+			
+			@Test
+			void addRightNeighbor() {
+				boolean result = field.addNeighbor(new Field(3, 4));
+				
+				assertTrue(result);
+			}
+			
+			@Test
+			void addBottomNeighbor() {
+				boolean result = field.addNeighbor(new Field(4, 3));
+				
+				assertTrue(result);
+			}
+			
+			@Test
+			void addLeftNeighbor() {
+				boolean result = field.addNeighbor(new Field(3, 2));
+				
+				assertTrue(result);
+			}
+		
+		//Diagonals
+			
+			@Test
+			void addNENeighbor() {
+				boolean result = field.addNeighbor(new Field(2, 4));
+				
+				assertTrue(result);
+			}
+			
+			@Test
+			void addSENeighbor() {
+				boolean result = field.addNeighbor(new Field(4, 4));
+				
+				assertTrue(result);
+			}
+			
+			@Test
+			void addSONeighbor() {
+				boolean result = field.addNeighbor(new Field(4, 2));
+				
+				assertTrue(result);
+			}
+			
+			@Test
+			void addNONeighbor() {
+				boolean result = field.addNeighbor(new Field(2, 2));
+				
+				assertTrue(result);
+			}
+	
+	//open
+	
+		@Test
+		void openWithoutOpenWithoutMarked() {
+			assertTrue(field.open());
+		}
+		
+		@Test
+		void openWithoutOpenWithMarked() {
+			field.invertMarked();
+			
+			assertFalse(field.open());
+		}
+		
+		@Test
+		void openWithOpenWithoutMarked() {
+			field.setOpen();
+			
+			assertFalse(field.open());
+		}
+		
+		@Test
+		void openWithOpenWithMarked() {
+			field.invertMarked();
+			field.setOpen();
+			
+			assertFalse(field.open());
+		}
+		
+		@Test
+		void openWithMined() {
+			field.putMine();
+			
+			assertThrows(ExplosionException.class, () -> {
+				field.open();
+			});
+		}
+		
+		@Test
+		void openWithNeighbors() {
+			Field f1 = new Field(4, 4);
+			field.addNeighbor(f1);
+			Field f2 = new Field(4, 3);
+			f1.addNeighbor(f2);
+			
+			field.open();
+			
+			assertTrue(f2.isOpen() && f1.isOpen());
+		}
+		
+		@Test
+		void openWithNeighborsWithMined() {
+			Field f4 = new Field(4, 4);
+			field.addNeighbor(f4);
+			Field f5 = new Field(5, 5);
+			f5.putMine();
+			f4.addNeighbor(f5);
+			field.open();
+			
+			assertFalse(f5.isOpen());
+		}
+		
+	//toString
+		
+		@Test
+		void notOpenIsMarked() {
+			field.invertMarked();
+			
+			String result = field.toString();
+			
+			assertTrue(result == "+");
+		}
+		
+		@Test
+		void notOpenNotMarked() {
+			String result = field.toString();
+			
+			assertTrue(result == "?");
+		}
+		
+		@Test
+		void isOpenNotBombsClose() {
+			Field f4 = new Field(4, 4);
+			Field f5 = new Field(5, 5);
+			
+			f4.addNeighbor(f5);
+			field.addNeighbor(f4);
+			
+			f5.putMine();
+			field.open();
+			
+			assertTrue(field.toString() == " ");
+		}
+		
+}

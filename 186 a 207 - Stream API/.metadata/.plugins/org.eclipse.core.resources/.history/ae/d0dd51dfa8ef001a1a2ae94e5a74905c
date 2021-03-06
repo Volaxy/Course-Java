@@ -1,0 +1,14 @@
+package application;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Aluno a1 = new Aluno("Ana", 5.7);
+		Aluno a1 = new Aluno("Ana", 9.7);
+		Aluno a1 = new Aluno("Ana", 1.7);
+		Aluno a1 = new Aluno("Ana", 8.0);
+		Aluno a1 = new Aluno("Ana", 2.9);
+	}
+
+}

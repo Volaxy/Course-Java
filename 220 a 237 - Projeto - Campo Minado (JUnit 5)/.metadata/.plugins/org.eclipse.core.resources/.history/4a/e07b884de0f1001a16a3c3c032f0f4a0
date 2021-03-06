@@ -1,0 +1,67 @@
+package br.com.gustavomp.ms.model.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Board {
+	private int lines;
+	private int columns;
+	private int mines;
+	
+	private List<Field> fields = new ArrayList<Field>();
+	
+	public Board(int lines, int columns, int mines) {
+		this.lines = lines;
+		this.columns = columns;
+		this.mines = mines;
+		
+		createFields();
+		associateFields();
+		putMines();
+	}
+
+	public int getLines() {
+		return lines;
+	}
+
+	public int getColumns() {
+		return columns;
+	}
+
+	public int getMines() {
+		return mines;
+	}
+
+	public List<Field> getFields() {
+		return fields;
+	}
+	
+	private void createFields() {
+		for(int i = 1; i <= getLines(); i++) {
+			for(int j = 1; j <= getColumns(); j++) {
+				getFields().add(new Field(i, j));
+			}
+		}
+	}
+	
+	private void putMines() {
+		int minesPuted = 0;
+		while(minesPuted < getMines()) {
+			int r1 = (int) (Math.random() * getLines());
+			int r2 = (int) (Math.random() * getColumns());
+			
+			Field ft = getFields().stream()
+					.filter(f -> f.getLine() == r1 && f.getColumn() == r2)
+					.findFirst().get();
+			
+			if(!ft.isMined()) {
+				
+			}
+		}
+	}
+	
+	private void associateFields() {
+		
+	}
+	
+}

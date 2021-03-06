@@ -1,0 +1,16 @@
+package application;
+
+import entities.Produto;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Produto p1 = new Produto("Internet", "Computador", 1000.00);
+		Produto p2 = new Produto("Cozinha", "mesa", 200.00);
+		Produto p3 = new Produto("Carro", "Farol", 450.00);
+		Produto p4 = new Produto("Cozinha", "Panela", 10.00);
+		Produto p5 = new Produto("Jogos", "God Of War", 100.00);
+	}
+
+}

@@ -1,0 +1,14 @@
+package application;
+
+import java.util.function.Consumer;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Consumer<Produto> imprimir = valor -> System.out.println(valor);
+		
+		System.out.println(imprimir);
+	}
+
+}

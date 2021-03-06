@@ -1,0 +1,58 @@
+package br.com.gustavomp.ms.model.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Board {
+	private int lines;
+	private int columns;
+	
+	private List<Field> fields = new ArrayList<Field>();
+	
+	Board(int lines, int columns) {
+		this.lines = lines;
+		this.columns = columns;
+		
+		createFields();
+		associateNeighbors();
+	}
+
+	public int getLines() {
+		return lines;
+	}
+
+	public int getColumns() {
+		return columns;
+	}
+
+	public List<Field> getFields() {
+		return fields;
+	}
+	
+	private void createFields() {
+		for(int i = 1; i <= getLines(); i++) {
+			for(int j = 1; j <= getColumns(); j++) {
+				getFields().add(new Field(i, j));
+			}
+		}
+	}
+	
+	private void associateNeighbors() {
+		for(int i = 0; i < getLines(); i++) {
+			for(int j = 0; j < getColumns(); j++) {
+				Field field = getFields().get(i * getLines() + j);
+				
+				for(int l = field.getLine() - 1; l <= field.getLine() + 1; l++) {
+					for(int c = field.getColumn() - 1; c <= field.getColumn() + 1; c++) {
+						if(l > 0 && c > 0) {
+							field.addNeighbor(new Field(l, c));
+							//??????
+						}
+					}
+				}
+				
+			}
+		}
+	}
+	
+}

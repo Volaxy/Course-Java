@@ -1,0 +1,11 @@
+package br.com.gustavomp.model.exceptions;
+
+public class ExplosionException extends RuntimeException {
+	
+	private static final long serialVersionUID = 1L;
+	
+	public void ExplosionException(String msg) {
+		super(msg);
+	}
+	
+}

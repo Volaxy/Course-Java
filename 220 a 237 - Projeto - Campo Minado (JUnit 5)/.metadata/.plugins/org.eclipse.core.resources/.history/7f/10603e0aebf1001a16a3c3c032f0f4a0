@@ -1,0 +1,12 @@
+package br.com.gustavomp.ms.application;
+
+import br.com.gustavomp.ms.model.entities.Board;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Board board = new Board(4, 4, 4);
+	}
+
+}

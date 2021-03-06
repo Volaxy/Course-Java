@@ -1,0 +1,7 @@
+package br.com.gustavomp.view;
+
+public class UI {
+	public static void (Board board) {
+		
+	}
+}

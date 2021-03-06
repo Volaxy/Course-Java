@@ -1,0 +1,85 @@
+package br.com.gustavomp.model.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Board {
+
+	private int lines;
+	private int columns;
+	private int mines;
+	
+	List<Field> fields = new ArrayList<Field>();
+
+	public Board(int lines, int columns, int mines) {
+		this.lines = lines;
+		this.columns = columns;
+		this.mines = mines;
+		
+		generateFields();
+		putMines();
+		associateFields();
+	}
+
+	private int getLines() {
+		return lines;
+	}
+
+	private int getColumns() {
+		return columns;
+	}
+	
+	private int getMines() {
+		return mines;
+	}
+
+	private List<Field> getFields() {
+		return fields;
+	}
+	
+	//Methods
+
+	private void generateFields() {
+		for(int i = 0; i < getLines(); i++) {
+			for(int j = 0; j < getColumns(); j++) {
+				getFields().add(new Field(i, j));
+			}
+		}
+	}
+	
+	private void putMines() {
+		int minesPuted = 0;
+		
+		while(minesPuted < getMines()) {
+			int random = (int) Math.random() * (getLines() * getColumns());
+			
+			if(!getFields().get(random).isMined()) {
+				getFields().get(random).setMined();
+				
+				minesPuted++;
+			}
+		}
+	}
+	
+	private void associateFields() {
+		for (Field field1 : getFields()) {
+			for (Field field2 : getFields()) {
+				field1.addNeighbor(field2);
+			}
+		}
+	}
+	
+	
+	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		
+		for (Field field : getFields()) {
+			sb.append(field.toString());
+		}
+		
+		return sb.toString();
+	}
+	
+}

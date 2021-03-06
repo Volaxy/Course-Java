@@ -1,0 +1,17 @@
+import static org.junit.jupiter.api.Assertions.fail;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import br.com.gustavomp.model.entities.Field;
+
+class FieldTest {
+
+	Field field;
+	
+	@BeforeEach
+	void test() {
+		field = new Field(3, 3);
+	}
+
+}

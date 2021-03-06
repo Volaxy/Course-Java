@@ -1,0 +1,30 @@
+package br.com.gustavomp.ms.model.entities;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class BoardTest {
+
+	Board board;
+	
+	@BeforeEach
+	void test() {
+		board = new Board(3, 3, 3);
+	}
+	
+	@Test
+	void createBoard1() {
+		Field f1 = board.getFields().get(0);
+		
+		assertTrue(f1.getLine() == 0 && f1.getColumn() == 0);
+	}
+	
+	void createBoard2() {
+		Field f1 = board.getFields().get(9);
+		
+		assertTrue(f1.getLine() == 2 && f1.getColumn() == 2);
+	}
+
+}

@@ -1,0 +1,31 @@
+.main {
+	-fx-background-color: black;
+	-fx-font-family: "Oswald";
+}
+
+.title {
+	-fx-text-fill: #7e35e1;
+	-fx-font-size: 28px;
+}
+
+.number {	
+	-fx-text-fill: #eee;
+	-fx-font-size: 24px;
+}
+
+.button {
+	-fx-background-color: #fff;
+	-fx-text-fill: #48b2ee;
+	-fx-font-size: 28px;
+	-fx-min-width: 60px;
+	-fx-min-height: 60px;
+	-fx-background-radius: 30px;
+}
+
+.green {
+	-fx-text-fill: #00ff80;
+}
+
+.red {
+	-fx-text-fill: #ff0000;
+}

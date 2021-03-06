@@ -1,0 +1,31 @@
+package br.com.gustavomp.view;
+
+import java.util.Scanner;
+
+import br.com.gustavomp.model.entities.Board;
+import br.com.gustavomp.model.exceptions.ExitException;
+
+public class UI {
+	public static void showBoard(Board board) {
+		System.out.println(board.toString());
+	}
+	
+	public static void inputs() {
+		Scanner sc = new Scanner(System.in);
+		
+		try {
+			System.out.print("Enter 1 for open/mark or 2 for exit: ");
+			int option = sc.nextInt();
+			
+			if(option == 1) {
+				System.out.print("Select the line and column: ");
+			} else {
+				throw new ExitException("Obrigado por jogar");
+			}
+		} catch (ExitException e) {
+			throw new ExitException("Obrigado por jogar");
+		} finally {
+			sc.close();
+		}
+	}
+}

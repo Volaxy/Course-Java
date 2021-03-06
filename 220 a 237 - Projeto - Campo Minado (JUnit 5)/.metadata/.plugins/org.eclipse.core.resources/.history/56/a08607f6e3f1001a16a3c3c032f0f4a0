@@ -1,0 +1,61 @@
+package br.com.gustavomp.ms.model.entities;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class BoardTest {
+
+	Board board;
+	
+	@BeforeEach
+	void test() {
+		board = new Board(3, 3, 5);
+	}
+	
+	//Create Board
+	
+		//Create Fields
+	
+			@Test
+			void createFields1() {
+				Field f1 = board.getFields().get(0);
+				
+				assertTrue(f1.getLine() == 0 && f1.getColumn() == 0);
+			}
+			
+			@Test
+			void createFields2() {
+				Field f1 = board.getFields().get(8);
+				
+				assertTrue(f1.getLine() == 2 && f1.getColumn() == 2);
+			}
+			
+		//associateNeighbors
+			
+			@Test
+			void associateNeighbors() {
+				int neighbors = board.getFields().get(4).getNeighbors().size();
+				System.out.println(neighbors);
+				assertTrue(neighbors == 3);
+			}
+			
+		//putMines
+			
+			@Test
+			void putMinesWithBombs() {
+				long bombs = board.getFields().stream().filter(f -> f.isMined()).count();
+				
+				assertTrue(bombs == board.getMines());
+			}
+			
+			@Test
+			void putMinesWithoutBombs() {
+				board = new Board(3, 3, 0);
+				boolean bombs = board.getFields().stream().noneMatch(f -> f.isMined());
+				
+				assertTrue(bombs);
+			}
+
+}

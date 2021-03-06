@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Data.java&apos; to &apos;109 - Valor NULL - 01/src/application&apos;&#x0D;&#x0A;- Original project: &apos;089 - Desafio Classe Data - Resposta - 01&apos;&#x0D;&#x0A;- Destination element: &apos;109 - Valor NULL - 01/src/application&apos;&#x0D;&#x0A;- Original element: &apos;application.Data.java&apos;" description="Copy compilation unit" destination="=109 - Valor NULL - 01/src&lt;application" element1="/src&lt;application{Data.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1598728717397" units="1" version="1.0"/>
+</session>

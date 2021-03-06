@@ -1,0 +1,14 @@
+package br.com.gustavomp.ms.controller;
+
+import br.com.gustavomp.ms.model.entities.Board;
+
+public class BoardController {
+	public static void openField(String xAndy, Board board) {
+		String[] coordinate = xAndy.replace(" ", "").split(",");
+		
+		int line = Integer.parseInt(coordinate[0]);
+		int column = Integer.parseInt(coordinate[1]);
+		
+		board.open(line, column);
+	}
+}

@@ -1,0 +1,8 @@
+package br.com.gustavomp.model.entities;
+
+public class Field {
+	private int line;
+	private int column;
+	
+	
+}

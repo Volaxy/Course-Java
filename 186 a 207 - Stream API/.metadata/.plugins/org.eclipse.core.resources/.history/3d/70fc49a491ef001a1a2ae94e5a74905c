@@ -1,0 +1,16 @@
+package application;
+
+import java.util.function.Consumer;
+import java.util.stream.Stream;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Consumer<String> print = System.out::println;
+		
+		Stream<String> langs = Stream.of("Java ", "Lua ", "JS \n");
+		langs.forEach(print);
+	}
+
+}

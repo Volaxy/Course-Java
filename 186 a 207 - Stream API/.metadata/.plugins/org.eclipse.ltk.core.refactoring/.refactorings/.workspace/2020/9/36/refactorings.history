@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;197 - Desafio Filter #02 - 01&apos; to &apos;198 - Desafio Filter - Resposta - 01&apos;&#x0D;&#x0A;- Original element: &apos;197 - Desafio Filter #02 - 01&apos;&#x0D;&#x0A;- Renamed element: &apos;197 - Desafio Filter #02 - 01&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;197 - Desafio Filter #02 - 01&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=197 - Desafio Filter \#02 - 01" name="198 - Desafio Filter - Resposta - 01" references="true" stamp="1599334236548" version="1.0"/>
+</session>

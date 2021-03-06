@@ -1,0 +1,129 @@
+package br.com.gustavomp.ms.model.entities;
+
+import static org.junit.Assert.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class FieldTest {
+
+	Field field;
+	
+	@BeforeEach
+	void test() {
+		field = new Field(1, 1);
+	}
+	
+	@Test
+	void addNeighborTop() {
+		boolean result = field.addNeighbor(new Field(0, 1));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addNeighborRight() {
+		boolean result = field.addNeighbor(new Field(1, 2));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addNeighborBottom() {
+		boolean result = field.addNeighbor(new Field(2, 1));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addNeighborLeft() {
+		boolean result = field.addNeighbor(new Field(1, 0));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addNeighborNE() {
+		boolean result = field.addNeighbor(new Field(0, 2));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addNeighborSE() {
+		boolean result = field.addNeighbor(new Field(2, 2));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addNeighborSO() {
+		boolean result = field.addNeighbor(new Field(2, 0));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addNeighborNO() {
+		boolean result = field.addNeighbor(new Field(0, 0));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addNeighbor1() {
+		boolean result = field.addNeighbor(new Field(-1, -1));
+		
+		assertFalse(result);
+	}
+	
+	@Test
+	void addNeighbor2() {
+		boolean result = field.addNeighbor(new Field(-1, 0));
+		
+		assertFalse(result);
+	}
+	
+	@Test
+	void addNeighbor3() {
+		boolean result = field.addNeighbor(new Field(-1, 1));
+		
+		assertFalse(result);
+	}
+	
+	@Test
+	void addNeighbor4() {
+		boolean result = field.addNeighbor(new Field(0, 2));
+		
+		assertFalse(result);
+	}
+	
+	@Test
+	void addNeighbor5() {
+		boolean result = field.addNeighbor(new Field(-1, -1));
+		
+		assertFalse(result);
+	}
+	
+	@Test
+	void addNeighbor6() {
+		boolean result = field.addNeighbor(new Field(-1, -1));
+		
+		assertFalse(result);
+	}
+	
+	@Test
+	void addNeighbor7() {
+		boolean result = field.addNeighbor(new Field(-1, -1));
+		
+		assertFalse(result);
+	}
+	
+	@Test
+	void addNeighbor8() {
+		boolean result = field.addNeighbor(new Field(-1, -1));
+		
+		assertFalse(result);
+	}
+		
+}

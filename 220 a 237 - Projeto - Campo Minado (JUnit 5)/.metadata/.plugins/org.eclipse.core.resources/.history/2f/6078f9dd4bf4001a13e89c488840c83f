@@ -1,0 +1,9 @@
+package br.com.gustavomp.view;
+
+import br.com.gustavomp.model.entities.Board;
+
+public class UI {
+	public static void showBoard(Board board) {
+		
+	}
+}

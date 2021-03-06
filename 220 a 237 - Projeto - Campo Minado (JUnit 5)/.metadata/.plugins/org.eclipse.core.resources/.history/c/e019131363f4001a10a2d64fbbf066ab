@@ -1,0 +1,16 @@
+package br.com.gustavomp.view;
+
+import java.util.Scanner;
+
+import br.com.gustavomp.model.entities.Board;
+import br.com.gustavomp.model.exceptions.ExitException;
+
+public class UI {
+	public static void showBoard(Board board) {
+		System.out.println(board.toString());
+	}
+	
+	public static String inputs() {
+		
+	}
+}

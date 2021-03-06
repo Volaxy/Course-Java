@@ -1,0 +1,134 @@
+package br.com.gustavomp.ms.model.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
+
+import br.com.gustavomp.ms.model.exception.ExplosionException;
+
+public class Field {
+	private int line;
+	private int column;
+	private boolean open;
+	private boolean marked;
+	private boolean mined;
+	
+	private List<Field> neighbors = new ArrayList<Field>();
+	
+	Field(int line, int column) {
+		this.line = line;
+		this.column = column;
+	}
+
+	public int getLine() {
+		return line;
+	}
+
+	public int getColumn() {
+		return column;
+	}
+
+	public boolean isOpen() {
+		return open;
+	}
+
+	void setOpen() {
+		this.open = !open;
+	}
+
+	public boolean isMarked() {
+		return marked;
+	}
+
+	private void setMarked() {
+		this.marked = !marked;
+	}
+	
+	public boolean isMined() {
+		return mined;
+	}
+
+	private void setMined() {
+		this.mined = !mined;
+	}
+
+	public List<Field> getNeighbors() {
+		return neighbors;
+	}
+	
+	//Methods	
+	public boolean addNeighbor(Field neighbor) {
+		if(isNeighbor.apply(neighbor) == 1 || isNeighbor.apply(neighbor) == 2) {
+			getNeighbors().add(neighbor);
+			
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public boolean open() {
+		if(!isOpen() && !isMarked()) {
+			setOpen();
+			
+			if(isMined()) {
+				throw new ExplosionException("GAME OVER!");
+			}
+			
+			if(safeNeighbor()) {
+				getNeighbors().forEach(f -> f.open());
+			}
+			
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	private boolean safeNeighbor() {
+		return getNeighbors().stream().noneMatch(n -> n.isMined());
+	}
+
+	private long minesInTheNeighborhood() {
+		return getNeighbors().stream().filter(f -> f.isMined()).count();
+	}
+	
+	boolean fieldComplete() {
+		boolean condition1 = isOpen() && !isMined();
+		boolean condition2 = !isOpen() && isMarked();
+		
+		return condition1 || condition2;
+	}
+	
+	void invertMarked() {
+		if(!isOpen()) {
+			setMarked();
+		}
+	}
+	
+	void putMine() {
+		setMined();
+	}
+	
+	void reset() {
+		marked = false;
+		mined = false;
+		open = false;
+	}
+
+	public String toString() {
+		if(!isOpen()) {
+			if(isMarked()) {
+				return "+";
+			}else{
+				return "?";
+			}
+		}else{
+			if(minesInTheNeighborhood() > 0) {
+				return Long.toString(minesInTheNeighborhood());
+			}else{
+				return " ";
+			}
+		}
+	}
+}

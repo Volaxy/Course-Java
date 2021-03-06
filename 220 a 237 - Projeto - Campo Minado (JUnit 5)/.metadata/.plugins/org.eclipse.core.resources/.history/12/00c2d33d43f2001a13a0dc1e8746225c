@@ -1,0 +1,11 @@
+package br.com.gustavomp.ms.view;
+
+import br.com.gustavomp.ms.model.entities.Board;
+
+public class UI {
+
+	public static void showBoard(Board board) {
+		
+	}
+	
+}

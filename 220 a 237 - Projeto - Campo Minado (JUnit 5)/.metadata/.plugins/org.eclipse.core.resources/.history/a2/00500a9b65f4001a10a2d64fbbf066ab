@@ -1,0 +1,16 @@
+package br.com.gustavomp.application;
+
+import br.com.gustavomp.controller.Match;
+import br.com.gustavomp.model.entities.Board;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Board board = new Board(6, 6, 2);
+		
+		Match.start(board);
+		
+	}
+
+}

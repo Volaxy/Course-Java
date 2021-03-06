@@ -1,0 +1,9 @@
+package br.com.gustavomp.ms.model.entities;
+
+import org.junit.jupiter.api.BeforeEach;
+
+class FieldTest {
+
+	Field field;
+		
+}

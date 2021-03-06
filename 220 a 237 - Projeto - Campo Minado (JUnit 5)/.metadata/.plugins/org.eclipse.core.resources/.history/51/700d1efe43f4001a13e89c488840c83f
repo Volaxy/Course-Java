@@ -1,0 +1,133 @@
+package br.com.gustavomp.model.entities;
+
+import static org.junit.Assert.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import br.com.gustavomp.model.exceptions.ExplosionException;
+
+class FieldTest {
+
+	Field field;
+	
+	@BeforeEach
+	void test() {
+		field = new Field(3, 3);
+	}
+	
+	//addNeighbor
+	
+	@Test
+	void addTop() {
+		boolean result = field.addNeighbor(new Field(2, 3));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addRight() {
+		boolean result = field.addNeighbor(new Field(3, 4));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addBottom() {
+		boolean result = field.addNeighbor(new Field(4, 3));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addLeft() {
+		boolean result = field.addNeighbor(new Field(3, 2));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addNE() {
+		boolean result = field.addNeighbor(new Field(2, 4));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addSE() {
+		boolean result = field.addNeighbor(new Field(4, 4));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addSO() {
+		boolean result = field.addNeighbor(new Field(4, 2));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addNO() {
+		boolean result = field.addNeighbor(new Field(2, 2));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addTopx2() {
+		boolean result = field.addNeighbor(new Field(1, 3));
+		
+		assertFalse(result);
+	}
+	
+	@Test
+	void addRightx2() {
+		boolean result = field.addNeighbor(new Field(3, 5));
+		
+		assertFalse(result);
+	}
+	
+	@Test
+	void addBottomx2() {
+		boolean result = field.addNeighbor(new Field(5, 3));
+		
+		assertFalse(result);
+	}
+	
+	@Test
+	void addLeftx2() {
+		boolean result = field.addNeighbor(new Field(3, 1));
+		
+		assertFalse(result);
+	}
+
+	//open
+	
+	@Test
+	void openx2() {
+		field.open();
+		boolean result = field.open();
+		
+		assertFalse(result);
+	}
+	
+	@Test
+	void openWithBomb() {
+		field.setMined();
+		
+		assertThrows(ExplosionException.class, () -> {
+			field.open();
+		});
+	}
+	
+	@Test
+	void openWithSafeArea() {
+		Field f1 = new Field(4, 4);
+		Field f2 = new Field(5, 5);
+		
+		field.addNeighbor();
+		
+	}
+	
+}

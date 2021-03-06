@@ -1,0 +1,12 @@
+package application;
+
+import java.util.function.Predicate;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Predicate<Integer> isPar = x -> x % 2 == 0;
+	}
+
+}

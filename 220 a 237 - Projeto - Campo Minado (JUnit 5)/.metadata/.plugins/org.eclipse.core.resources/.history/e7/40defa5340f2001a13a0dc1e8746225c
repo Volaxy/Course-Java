@@ -1,0 +1,19 @@
+package br.com.gustavomp.ms.model.entities;
+
+import org.junit.jupiter.api.BeforeEach;
+
+class FieldTest {
+
+	Field field;
+	
+	@BeforeEach
+	void test() {
+		field = new Field(1, 1);
+	}
+	
+	@Test
+	void addNeighbortop() {
+		boolean result = field.addNeighbor(new Field(line, column))
+	}
+		
+}

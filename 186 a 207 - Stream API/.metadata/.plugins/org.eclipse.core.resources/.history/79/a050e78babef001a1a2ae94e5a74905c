@@ -1,0 +1,7 @@
+package entities;
+
+public class Produto {
+	public String categoria;
+	public String nome;
+	public Double preco;
+}

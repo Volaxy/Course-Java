@@ -1,0 +1,136 @@
+package br.com.gustavomp.model.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+
+import br.com.gustavomp.model.exceptions.ExplosionException;
+
+public class Field {
+	
+	private int line;
+	private int column;
+	
+	private boolean open;
+	private boolean mined;
+	private boolean marked;
+	
+	private List<Field> neighbors = new ArrayList<Field>();
+
+	public Field(int line, int column) {
+		this.line = line;
+		this.column = column;
+	}
+	
+	private int getLine() {
+		return line;
+	}
+
+	private int getColumn() {
+		return column;
+	}
+
+	private boolean isOpen() {
+		return open;
+	}
+	
+	private void setOpen() {
+		open = true;
+	}
+
+	boolean isMined() {
+		return mined;
+	}
+	
+	void setMined() {
+		mined = true;
+	}
+
+	private boolean isMarked() {
+		return marked;
+	}
+
+	private List<Field> getNeighbors() {
+		return neighbors;
+	}
+
+	//Methods
+	//Uncomment booleans if you want to test
+	
+	private Predicate<Field> isNeighbor = f -> {
+		int delta = Math.abs(getLine() - f.getLine()) + Math.abs(getColumn() - f.getColumn());
+		
+		//Prevents a side with +2 in dimensions from being added
+		return delta == 1 || 
+		(delta == 2 && getLine() != f.getLine() && getColumn() != f.getColumn()) ?
+		true : false;
+	};
+	
+	void addNeighbor(Field neighbor) {
+		if(isNeighbor.test(neighbor)) {
+			getNeighbors().add(neighbor);
+			
+			//return true;
+		}
+		
+		//return false;
+	}
+	
+	
+	
+	private void open() {
+		if(!isOpen() && !isMarked()) {
+			setOpen();
+			
+			if(isMined()) {
+				throw new ExplosionException("Game over");
+			}
+
+			getNeighbors().stream().filter(f -> !f.isMined()).forEach(f -> f.open());
+			
+			//return true;
+		}
+		
+		//return false;
+	}
+	
+	
+	
+	boolean isComplete() {
+		return isOpen() || (isMarked() && isMined()) ? true : false;
+	}
+	
+	
+	
+	private int minesClose() {
+		return (int) getNeighbors().stream().filter(f -> f.isMined()).count();
+	}
+	
+	
+	
+	@Override
+	String toString() {
+		if(!isOpen()) {
+			
+			if(isMarked()) {
+				return "X";
+			} else {
+				return "?";
+			}
+			
+		} else {
+			
+			if(isMined()) {
+				return "*";
+			} else {
+				if(minesClose() > 0) {
+					return Integer.toString(minesClose());
+				} else {
+					return " ";
+				}
+			}
+			
+		}
+	}
+	
+}

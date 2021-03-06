@@ -1,0 +1,18 @@
+package application;
+
+import java.util.function.Consumer;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Declara uma função consumer que recebe um Produto e execulta uma ação
+		Consumer<Produto> imprimir = p -> System.out.println(p.nome + "!!!");
+		
+		Produto p = new Produto("Caneta", 12.34, 0.09);
+		
+		//Metodo para execultar o Consumer
+		imprimir.accept(p);
+	}
+
+}

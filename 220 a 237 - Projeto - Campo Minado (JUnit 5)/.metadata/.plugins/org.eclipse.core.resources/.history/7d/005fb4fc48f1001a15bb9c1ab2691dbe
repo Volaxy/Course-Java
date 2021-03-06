@@ -1,0 +1,16 @@
+package br.com.gustavomp.ms.view;
+
+import br.com.gustavomp.ms.model.entities.Board;
+
+public class UI {
+	public static void showBoard(Board board) {
+		int c = 0;
+		for(int i = 0; i < board.getLines(); i++) {
+			for(int j = 0; j < board.getColumns(); j++) {
+				System.out.println(board.getFields().get(c).toString(););
+				
+				c++;
+			}
+		}
+	}
+}

@@ -1,0 +1,7 @@
+package application;
+
+public class Produto {
+	String name;
+	Double price;
+	Double discount;
+}

@@ -1,0 +1,41 @@
+package br.com.gustavomp.ms.application;
+
+import java.util.Scanner;
+
+import br.com.gustavomp.ms.controller.BoardController;
+import br.com.gustavomp.ms.model.entities.Board;
+import br.com.gustavomp.ms.view.UI;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Number of lines: ");
+		int lines = sc.nextInt();
+		System.out.print("Number of columns: ");
+		int columns = sc.nextInt();
+		System.out.print("Number of mines: ");
+		int mines = sc.nextInt();
+		
+		Board board = new Board(lines, columns, mines);
+		
+		board.mark(2, 2);
+		board.open(3, 3);
+		
+//		while(!board.targetComplete()) {
+//			UI.showBoard(board);
+//			System.out.print("Select a field (line, column): ");
+//			sc.nextLine();
+//			String coordinate = sc.nextLine();
+//			
+//			BoardController.openField(coordinate, board);
+//		}
+		
+		UI.showBoard(board);
+		
+		sc.close();
+	}
+
+}

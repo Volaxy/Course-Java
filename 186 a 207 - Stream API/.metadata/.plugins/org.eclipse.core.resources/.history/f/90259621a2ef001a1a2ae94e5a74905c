@@ -1,0 +1,9 @@
+package util;
+
+import java.util.function.Consumer;
+import java.util.function.Function;
+
+public class utils {
+	public static final Consumer<String> print = System.out::print;
+	public static final Function<Integer, String> = n -> Integer.toBinaryString(n);
+}

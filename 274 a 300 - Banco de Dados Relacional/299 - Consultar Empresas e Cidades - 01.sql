@@ -1,0 +1,1 @@
+select co.name, ci.name from companies co, cities_companies c, cities ci where co.id = c.companie_id and ci.id = c.citie_id and sede;

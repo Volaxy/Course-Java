@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="br.com.gustavomp.ms.model.exception.ExplosionException"/>
+    <fullyQualifiedTypeName name="br.com.gustavomp.ms.view.UI"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="br.com.gustavomp.ms.model.entities.Field"/>
+    <fullyQualifiedTypeName name="br.com.gustavomp.ms.model.entities.Board"/>
+    <fullyQualifiedTypeName name="java.lang.ref.Cleaner"/>
+    <fullyQualifiedTypeName name="java.lang.Runtime.Version"/>
+    <fullyQualifiedTypeName name="java.lang.Runtime"/>
+    <fullyQualifiedTypeName name="br.com.gustavomp.ms.controller.BoardController"/>
+    <fullyQualifiedTypeName name="java.util.function.Function"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeEach"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.util.function.Predicate"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="br.com.gustavomp.model.entities.Field"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="br.com.gustavomp.model.enums.StatusField"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.params.shadow.com.univocity.parsers.common.input.BomInput"/>
+    <fullyQualifiedTypeName name="br.com.gustavomp.controller.Match"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+    <fullyQualifiedTypeName name="java.lang.ExceptionInInitializerError"/>
+    <fullyQualifiedTypeName name="java.lang.CharSequence"/>
+    <fullyQualifiedTypeName name="java.lang.Iterable"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="br.com.gustavomp.model.exceptions.ExitException"/>
+    <fullyQualifiedTypeName name="br.com.gustavomp.model.entities.Board"/>
+    <fullyQualifiedTypeName name="br.com.gustavomp.model.exceptions.ExplosionException"/>
+</qualifiedTypeNameHistroy>

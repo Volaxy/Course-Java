@@ -1,0 +1,14 @@
+package application;
+
+import java.util.function.BinaryOperator;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BinaryOperator<Double> avg = (n1, n2) -> (n1 + n2) / 2;
+		
+		System.out.println(avg.apply(1, 2));
+	}
+
+}

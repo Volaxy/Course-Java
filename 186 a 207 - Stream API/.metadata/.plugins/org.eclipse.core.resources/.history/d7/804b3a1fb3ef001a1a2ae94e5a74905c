@@ -1,0 +1,15 @@
+package application;
+
+import entities.Aluno;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Aluno a1 = new Aluno("Ana", 4.7);
+		Aluno a1 = new Aluno("Gabi", 7.7);
+		Aluno a1 = new Aluno("Joao", 2.7);
+		Aluno a1 = new Aluno("Gui", 8.0);
+	}
+
+}

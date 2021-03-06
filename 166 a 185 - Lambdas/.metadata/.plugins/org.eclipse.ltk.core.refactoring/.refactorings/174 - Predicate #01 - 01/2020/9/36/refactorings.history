@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Produto.java&apos; to &apos;175 - Consumer - 01/src/application&apos;&#x0D;&#x0A;- Original project: &apos;174 - Predicate #01 - 01&apos;&#x0D;&#x0A;- Destination element: &apos;175 - Consumer - 01/src/application&apos;&#x0D;&#x0A;- Original element: &apos;application.Produto.java&apos;" description="Copy compilation unit" destination="=175 - Consumer - 01/src&lt;application" element1="/src&lt;application{Produto.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1599099819419" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,52 @@
+package br.com.gustavomp.ms.model.entities;
+
+import static org.junit.Assert.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class FieldTest {
+
+	Field field;
+	
+	@BeforeEach
+	void test() {
+		field = new Field(1, 1);
+	}
+	
+	@Test
+	void addNeighborTop() {
+		boolean result = field.addNeighbor(new Field(0, 1));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addNeighborRight() {
+		boolean result = field.addNeighbor(new Field(1, 2));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addNeighborBottom() {
+		boolean result = field.addNeighbor(new Field(2, 1));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addNeighborLeft() {
+		boolean result = field.addNeighbor(new Field(1, 0));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addNeighbortop() {
+		boolean result = field.addNeighbor(new Field(-1, -1));
+		
+		assertFalse(result);
+	}
+		
+}

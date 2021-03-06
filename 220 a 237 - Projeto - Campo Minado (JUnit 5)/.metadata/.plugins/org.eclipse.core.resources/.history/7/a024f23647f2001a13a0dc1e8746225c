@@ -1,0 +1,9 @@
+package br.com.gustavomp.ms.controller;
+
+public class BoardController {
+	public static void openField(String xAndy) {
+		String[] coordinate = xAndy.split(",");
+		
+		int line = Integer.parseInt(coordinate[0]);
+	}
+}

@@ -1,0 +1,51 @@
+package br.com.gustavomp.ms.model.entities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Board {
+	private int lines;
+	private int columns;
+	private int mines;
+	
+	private List<Field> fields = new ArrayList<Field>();
+	
+	public Board(int lines, int columns, int mines) {
+		this.lines = lines;
+		this.columns = columns;
+		this.mines = mines;
+		
+		createFields();
+		associateFields();
+		putMines();
+	}
+
+	public int getLines() {
+		return lines;
+	}
+
+	public int getColumns() {
+		return columns;
+	}
+
+	public List<Field> getFields() {
+		return fields;
+	}
+	
+	private void createFields() {
+		for(int i = 1; i <= getLines(); i++) {
+			for(int j = 1; j <= getColumns(); j++) {
+				getFields().add(new Field(i, j));
+			}
+		}
+	}
+	
+	private void putMines() {
+		
+	}
+	
+	private void associateFields() {
+		
+	}
+	
+}

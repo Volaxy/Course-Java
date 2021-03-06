@@ -1,0 +1,5 @@
+package br.com.gustavomp.model.enums;
+
+public enum StatusField {
+
+}

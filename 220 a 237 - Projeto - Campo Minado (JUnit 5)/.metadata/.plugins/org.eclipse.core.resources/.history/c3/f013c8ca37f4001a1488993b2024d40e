@@ -1,0 +1,45 @@
+package br.com.gustavomp.model.entities;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class FieldTest {
+
+	Field field;
+	
+	@BeforeEach
+	void test() {
+		field = new Field(3, 3);
+	}
+	
+	@Test
+	void addTop() {
+		boolean result = field.addNeighbor(new Field(2, 3));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addRight() {
+		boolean result = field.addNeighbor(new Field(3, 4));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addBottom() {
+		boolean result = field.addNeighbor(new Field(4, 3));
+		
+		assertTrue(result);
+	}
+	
+	@Test
+	void addLeft() {
+		boolean result = field.addNeighbor(new Field(3, 2));
+		
+		assertTrue(result);
+	}
+
+}

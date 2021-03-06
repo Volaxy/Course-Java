@@ -1,0 +1,17 @@
+package entities;
+
+public class Media {
+	private double total;
+	private int quantidade;
+	
+	public Media adicionar(double x) {
+		total += x;
+		quantidade++;
+		
+		return this;
+	}
+	
+	public double getValor() {
+		return total / quantidade;
+	}
+}

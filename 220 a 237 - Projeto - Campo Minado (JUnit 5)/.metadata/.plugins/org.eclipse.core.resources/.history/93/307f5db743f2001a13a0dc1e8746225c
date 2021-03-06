@@ -1,0 +1,14 @@
+package br.com.gustavomp.ms.model.entities;
+
+import org.junit.jupiter.api.BeforeEach;
+
+class BoardTest {
+
+	Board board;
+	
+	@BeforeEach
+	void test() {
+		board = new Board(3, 3, 5);
+	}
+
+}
